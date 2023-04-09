@@ -1,0 +1,17 @@
+#include<stdio.h>
+int giaithua(int n)
+{
+if(n==0||n==1)
+	return 1;
+	return giaithua(n-1)*n;
+
+	}
+int main(){
+	int gt;
+	int n;
+	printf("nhap n");
+	scanf("%d",&n);
+	gt=giaithua(n);
+	printf("%d",gt);
+	return 0;
+}
