@@ -1,0 +1,40 @@
+#include<stdio.h>
+float a[100];int n;
+
+void nhapmang(float a[],int &n){
+	do{
+		printf("nhap n");
+		scanf("%d",&n);
+	}while(n<0||n>100);
+	for(int i=0;i<n;i++){
+		printf("a[%.2f]=",i);
+		scanf("%f",&a[i]);
+	}
+}
+
+void xuatmang(float a[],int n){
+
+	for(int i=0;i<n;i++){
+		printf("%.2f",a[i]);
+	}
+}
+
+int dem(float a[],int n){
+	if(n==0)
+	return 0;
+	if(a[n-1]>0)
+	return 1+dem(a,n-1);
+	return dem(a,n-1);
+		
+	}
+
+int main(){
+	float a[100];
+	int n;
+	nhapmang(a,n);
+	xuatmang(a,n);
+	int d=dem(a,n);
+	printf("tong so duong= %d",d);
+	return 0;
+	
+}
